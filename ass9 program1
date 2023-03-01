@@ -1,0 +1,32 @@
+//prime numbers between range
+#include <stdio.h>
+int main()
+{
+    int start, end, i, j, count = 0, Prime;
+    
+    printf("Enter starting number: ");
+    scanf("%d", &start);
+    printf("Enter ending number: ");
+    scanf("%d", &end);
+    printf("Prime numbers between %d and %d are: \n", start, end);
+    for (i = start; i <= end; i++)
+    {
+        Prime = 1;
+        for (j = 2; j <= i/2; j++)
+        {
+            if (i % j == 0)
+            {
+                Prime = 0;
+                break;
+            }
+        }
+        if (Prime == 1)
+        {
+            printf("%d ", i);
+            count++;
+        }
+    }
+    printf("\nTotal number of prime numbers found: %d", count);
+    
+    return 0;
+}
